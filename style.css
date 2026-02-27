@@ -1,0 +1,282 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* ========================= */
+/* FUNDO ESTRELADO */
+/* ========================= */
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/background.jpg") center/cover no-repeat;
+  animation: zoom 40s linear infinite;
+  z-index: -2;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.container {
+  margin: 80px auto;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  box-shadow:
+    0 0 20px rgba(0, 255, 255, 0.3),
+    0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.title {
+  font-size: 3em;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px cyan;
+  }
+  to {
+    text-shadow: 0 0 25px gold;
+  }
+}
+
+/* ========================= */
+/* TEXTO */
+/* ========================= */
+
+.message {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* CAVALEIROS */
+/* ========================= */
+
+.cavaleiros {
+  margin-top: 25px;
+}
+
+.knight {
+  width: 200px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: appear 2s forwards;
+}
+
+.delay {
+  animation-delay: 1s;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+button {
+  margin-top: 30px;
+  padding: 15px 25px;
+  font-size: 18px;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+
+/* ========================= */
+/* VISIBILIDADE */
+/* ========================= */
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================= */
+/* INTRO (TELA PRETA) */
+/* ========================= */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 2s ease;
+}
+
+#btnCosmoIntro {
+  font-size: 22px;
+  padding: 18px 35px;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 20px gold;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* ========================= */
+/* FLASH */
+/* ========================= */
+
+#flash {
+  position: fixed;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.flash-active {
+  animation: flashAnim 0.6s ease-out;
+}
+
+@keyframes flashAnim {
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* PARTÍCULAS */
+/* ========================= */
+
+#particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: cyan;
+  border-radius: 50%;
+  animation: rise 3s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+/* ========================= */
+/* VIDEO OVERLAY */
+/* ========================= */
+
+#videoOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+}
+
+.video-container video {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 30px cyan;
+}
+
+#fecharVideo {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  font-size: 22px;
+  background: crimson;
+  color: white;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8em;
+  }
+
+  .knight {
+    width: 120px;
+  }
+
+  .video-container iframe {
+    height: 220px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

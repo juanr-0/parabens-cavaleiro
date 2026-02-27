@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- RESPONSIVO (ESSENCIAL PARA CELULAR) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Parabéns, Guerreiro!</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="intro">
+    <button id="btnCosmoIntro">
+        Despertar o Cosmo 🔥
+    </button>
+
+</div>
+<div id="flash"></div>
+<div id="particles"></div>
+
+<!-- Música -->
+<audio id="musica" preload="auto" loop>
+    <source src="audio/musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="stars"></div>
+
+<section class="container">
+
+    <h1 class="title">
+        Eleve seu Cosmo, <span id="nome">David</span>!
+    </h1>
+
+    <p class="message">
+        Hoje os Cavaleiros de Atena comemoram o seu nascimento!
+    </p>
+
+    <div class="cavaleiros">
+        <img src="img/dohko.png" class="knight" alt="Dohko de Libra">
+        <img src="img/shiryu.png" class="knight delay" alt="Shiryu de Dragão">
+    </div>
+
+   <button onclick="mostrarVideo()" 
+        id="btnVideo"
+        class="video-btn hidden">
+    ▶ Assistir Retrospectiva
+    </button>
+
+    <p id="final" class="hidden">
+        🎉 Feliz Aniversário! Que seu cosmo brilhe mais forte a cada ano!
+        Que o próximo desafio da Casa de Concurso seja vencido com sucesso ⭐
+    </p>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
